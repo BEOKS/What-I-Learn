@@ -1,0 +1,9 @@
+sentry:
+  dsn: https://b0497cae8eb253e4ebd806c066be4f41@o4505859876454400.ingest.sentry.io/4505859993632768
+  traces-sample-rate: 1.0
+  exception-resolver-order: -2147483647
+  logging:
+    minimum-breadcrumb-level: debug
+    minimum-event-level: info
+    enabled: true
+  debug: true
