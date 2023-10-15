@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/APIExcpetion.main.iml" filepath="$PROJECT_DIR$/.idea/modules/APIExcpetion.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/FileUpload.main.iml" filepath="$PROJECT_DIR$/.idea/modules/FileUpload.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Filter.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Filter.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Session.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Session.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/spring-codekata.iml" filepath="$PROJECT_DIR$/.idea/spring-codekata.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/typeconversion.main.iml" filepath="$PROJECT_DIR$/.idea/modules/typeconversion.main.iml" />
     </modules>
   </component>
 </project>

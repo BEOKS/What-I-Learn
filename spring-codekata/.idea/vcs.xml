@@ -2,10 +2,12 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/.." vcs="Git" />
     <mapping directory="$PROJECT_DIR$/APIExcpetion" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/FileUpload" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/Filter" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/Session" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/thymeleaf" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/typeconversion" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/validation" vcs="Git" />
   </component>

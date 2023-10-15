@@ -6,6 +6,7 @@
     <file type="web" url="file://$PROJECT_DIR$/FileUpload" />
     <file type="web" url="file://$PROJECT_DIR$/Filter" />
     <file type="web" url="file://$PROJECT_DIR$/Session" />
+    <file type="web" url="file://$PROJECT_DIR$/thymeleaf" />
     <file type="web" url="file://$PROJECT_DIR$/typeconversion" />
     <file type="web" url="file://$PROJECT_DIR$/validation" />
   </component>
