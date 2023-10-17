@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:ht="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>unescaped 텍스트 출력</title>
+</head>
+<body>
+<h1>unescaped 텍스트 출력</h1>
+<ul>
+    <li>th:text 사용 <span th:utext="${data}"> data 텍스트</span></li>
+    <li>컨텐츠 안에서 직접 출력하기 = [(${data})]</li>
+</ul>
+<h1><span th:inline="none">[[...]] vs [(...)]</span></h1>
+<ul>
+    <li><span th:inline="none">[[...]] = </span>[[${data}]]</li>
+    <li><span th:inline="none">[(...)] = </span>[(${data})]</li>
+</ul>
+
+</body>
+</html>
