@@ -1,7 +1,8 @@
-create table if not exists customers (
-                                         id bigserial not null,
-                                         name varchar not null,
-                                         email varchar not null,
-                                         primary key (id),
-    UNIQUE (email)
-    );
+CREATE TABLE students
+(
+    id    BIGINT AUTO_INCREMENT NOT NULL,
+    name  VARCHAR(255)          NULL,
+    age   INT                   NOT NULL,
+    email VARCHAR(255)          NULL,
+    CONSTRAINT pk_students PRIMARY KEY (id)
+);

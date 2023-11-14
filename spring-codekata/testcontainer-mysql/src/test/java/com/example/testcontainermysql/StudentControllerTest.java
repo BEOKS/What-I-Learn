@@ -3,8 +3,8 @@ package com.example.testcontainermysql;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.hasSize;
 
-import com.example.testcontainermysql.domain.Customer;
-import com.example.testcontainermysql.domain.CustomerRepository;
+import com.example.testcontainermysql.domain.Student;
+import com.example.testcontainermysql.domain.StudentRepository;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import java.util.List;
@@ -19,26 +19,43 @@ import org.springframework.test.context.DynamicPropertyRegistry;
 import org.springframework.test.context.DynamicPropertySource;
 import org.testcontainers.containers.MySQLContainer;
 
+/**
+ * 1. 통합 테스트를 위해 임의의 포트 번호를 할당한 웹 어플리케이션을 실행합니다.
+ */
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-class CustomerControllerTest {
+class StudentControllerTest {
 
+    //현재 서버의 포트 번호
     @LocalServerPort
     private Integer port;
 
+    /**
+     * 2. 도커 이미지 명을 명시해 컨테이너를 정의합니다.
+     */
     static MySQLContainer<?> mysql = new MySQLContainer<>(
-            "mysql:8.0.26"
+            "mysql:8.0.35"
     );
 
+    /**
+     * 3. 테스트 전, 컨테이너를 실행합니다, 이미지가 없다면 풀링을 먼저 수행합니다.
+     */
     @BeforeAll
     static void beforeAll() {
         mysql.start();
     }
 
+    /**
+     * 4. 테스트 후, 컨테이너를 종료합니다.
+     */
     @AfterAll
     static void afterAll() {
         mysql.stop();
     }
 
+    /**
+     * 5. 통합 테스트에서 동적으로 데이터베이스 관련 프로퍼티를 정의합니다. 이를 통해, JPA가 어떤 데이터베이스 연결 정보를 알 수 있습니다.
+     * @param registry
+     */
     @DynamicPropertySource
     static void configureProperties(DynamicPropertyRegistry registry) {
         registry.add("spring.datasource.url", mysql::getJdbcUrl);
@@ -47,26 +64,32 @@ class CustomerControllerTest {
     }
 
     @Autowired
-    CustomerRepository customerRepository;
+    StudentRepository studentRepository;
 
+    /**
+     * 6. 각 테스트 수행 전, 학생 테이블을 초기화합니다.
+     */
     @BeforeEach
     void setUp() {
         RestAssured.baseURI = "http://localhost:" + port;
-        customerRepository.deleteAll();
+        studentRepository.deleteAll();
     }
 
+    /**
+     * 7. 예시 데이터를 입력 후, API 테스트를 수행합니다.
+     */
     @Test
-    void shouldGetAllCustomers() {
-        List<Customer> customers = List.of(
-                new Customer(null, "John", "john@mail.com"),
-                new Customer(null, "Dennis", "dennis@mail.com")
+    void shouldGetAllStudents() {
+        List<Student> customers = List.of(
+                new Student("foo", 11, "john@mail.com"),
+                new Student("bar", 12, "dennis@mail.com")
         );
-        customerRepository.saveAll(customers);
+        studentRepository.saveAll(customers);
 
         given()
                 .contentType(ContentType.JSON)
                 .when()
-                .get("/api/customers")
+                .get("/student/all")
                 .then()
                 .statusCode(200)
                 .body(".", hasSize(2));
