@@ -1,4 +1,4 @@
-CREATE TABLE students
+CREATE TABLE IF NOT EXISTS students
 (
     id    BIGINT AUTO_INCREMENT NOT NULL,
     name  VARCHAR(255)          NULL,
