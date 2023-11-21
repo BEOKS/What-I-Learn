@@ -2,6 +2,12 @@ spring:
   sql:
     init:
       mode: always
-testcontainers:
-  reuse:
-    enable: true
+junit:
+  jupiter:
+    execution:
+      parallel:
+        enabled: true
+        mode:
+          default: concurrent
+          classes:
+            defalut: concurrent

@@ -3,7 +3,7 @@ package com.example.querydsl.entity;
 import jakarta.persistence.*;
 
 @Entity
-public class Student {
+public class StudentA {
     @Id
     Long id;
     String name;
@@ -11,13 +11,13 @@ public class Student {
     //@Convert(converter = Grade.GradeConverter.class)
     Grade grade;
 
-    public Student(Long id, String name, String department, Grade grade) {
+    public StudentA(Long id, String name, String department, Grade grade) {
         this.id = id;
         this.name = name;
         this.department = department;
         this.grade = grade;
     }
-    public Student(){}
+    public StudentA(){}
 
     @Override
     public String toString() {

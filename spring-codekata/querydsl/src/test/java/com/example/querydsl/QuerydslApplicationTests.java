@@ -1,6 +1,6 @@
 package com.example.querydsl;
 
-import com.example.querydsl.entity.Student;
+import com.example.querydsl.entity.StudentA;
 import com.example.querydsl.entity.StudentRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -23,19 +23,19 @@ class QuerydslApplicationTests {
 
     @BeforeEach
     void storeSample(){
-        ArrayList<Student> students = new ArrayList<>();
-        students.add(new Student(1L,"학생1","컴퓨터학과", Student.Grade.freshman));
-        students.add(new Student(2L,"학생2","컴퓨터학과", Student.Grade.sophomore));
-        students.add(new Student(3L,"학생3","컴퓨터학과", Student.Grade.junior));
-        students.add(new Student(4L,"학생4","컴퓨터학과", Student.Grade.senior));
-        studentRepository.saveAll(students);
+        ArrayList<StudentA> studentAS = new ArrayList<>();
+        studentAS.add(new StudentA(1L,"학생1","컴퓨터학과", StudentA.Grade.freshman));
+        studentAS.add(new StudentA(2L,"학생2","컴퓨터학과", StudentA.Grade.sophomore));
+        studentAS.add(new StudentA(3L,"학생3","컴퓨터학과", StudentA.Grade.junior));
+        studentAS.add(new StudentA(4L,"학생4","컴퓨터학과", StudentA.Grade.senior));
+        studentRepository.saveAll(studentAS);
 
     }
     @Test
     void findAll() {
-        List<Student> all = studentRepository.findAll();
-        for (Student student : all) {
-            System.out.println("student = " + student);
+        List<StudentA> all = studentRepository.findAll();
+        for (StudentA studentA : all) {
+            System.out.println("student = " + studentA);
         }
     }
 
@@ -55,17 +55,17 @@ class QuerydslApplicationTests {
 
     @Test
     void findAllByQuery() {
-        List<Student> all = studentRepository.findAllByQuery();
-        for (Student student : all) {
-            System.out.println("student = " + student);
+        List<StudentA> all = studentRepository.findAllByQuery();
+        for (StudentA studentA : all) {
+            System.out.println("student = " + studentA);
         }
     }
 
 
     @Test
     void findAllGrade() {
-        List<Student.Grade> all = studentRepository.findAllGradeDistinct();
-        for (Student.Grade gradle : all) {
+        List<StudentA.Grade> all = studentRepository.findAllGradeDistinct();
+        for (StudentA.Grade gradle : all) {
             System.out.println("gradle = " + gradle);
         }
     }

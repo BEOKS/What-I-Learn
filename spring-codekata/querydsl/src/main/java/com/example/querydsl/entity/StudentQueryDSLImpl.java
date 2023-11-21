@@ -18,14 +18,14 @@ public class StudentQueryDSLImpl implements StudentQueryDSL{
     }
 
     @Override
-    public List<Student> findAllByQuery() {
+    public List<StudentA> findAllByQuery() {
         return jpaQueryFactory.select(student)
                 .from(student)
                 .fetch();
     }
 
     @Override
-    public List<Student.Grade> findAllGradeDistinct() {
+    public List<StudentA.Grade> findAllGradeDistinct() {
         return jpaQueryFactory.select(Expressions.asEnum(student.grade))
                 .from(student)
                 .distinct()

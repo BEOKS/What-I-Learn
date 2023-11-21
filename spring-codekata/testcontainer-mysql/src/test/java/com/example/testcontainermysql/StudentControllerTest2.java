@@ -35,9 +35,9 @@ class StudentControllerTest2 {
     /**
      * 2. 도커 이미지 명을 명시해 컨테이너를 정의합니다.
      */
-    static MySQLContainer<?> mysql = new MySQLContainer<>(
-            "mysql:8.0.35"
-    ).withReuse(true);
+static MySQLContainer<?> mysql = new MySQLContainer<>(
+        "mysql:8.0.35"
+).withReuse(true);
 
 
     @BeforeAll
@@ -72,6 +72,25 @@ class StudentControllerTest2 {
      */
     @Test
     void shouldGetAllStudents() {
+        System.out.println("FirstParallelUnitTest first() start => " + Thread.currentThread().getName());
+        List<Student> customers = List.of(
+                new Student("foo", 11, "john@mail.com"),
+                new Student("bar", 12, "dennis@mail.com")
+        );
+        studentRepository.saveAll(customers);
+
+        given()
+                .contentType(ContentType.JSON)
+                .when()
+                .get("/student/all")
+                .then()
+                .statusCode(200)
+                .body(".", hasSize(2));
+    }
+
+    @Test
+    void shouldGetAllStudents2() {
+        System.out.println("FirstParallelUnitTest first() start => " + Thread.currentThread().getName());
         List<Student> customers = List.of(
                 new Student("foo", 11, "john@mail.com"),
                 new Student("bar", 12, "dennis@mail.com")
