@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.abstractquerydsl.entity.ScoreRepositoryTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-11-21T01:43:31" hostname="leejsui-MacBookPro.local" time="0.483">
+  <properties/>
+  <testcase name="printByStudent()" classname="com.example.abstractquerydsl.entity.ScoreRepositoryTest" time="0.483"/>
+  <system-out><![CDATA[10:43:29.451 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.example.abstractquerydsl.entity.ScoreRepositoryTest]: ScoreRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+10:43:29.499 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.example.abstractquerydsl.AbstractQuerydslApplication for test class com.example.abstractquerydsl.entity.ScoreRepositoryTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.1.5)
+
+2023-11-21T10:43:29.677+09:00  INFO 6978 --- [    Test worker] c.e.a.entity.ScoreRepositoryTest         : Starting ScoreRepositoryTest using Java 17.0.8 with PID 6978 (started by leejs in /Users/leejs/What-I-Learn/spring-codekata/abstract-querydsl)
+2023-11-21T10:43:29.680+09:00  INFO 6978 --- [    Test worker] c.e.a.entity.ScoreRepositoryTest         : No active profile set, falling back to 1 default profile: "default"
+2023-11-21T10:43:29.952+09:00  INFO 6978 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-21T10:43:29.983+09:00  INFO 6978 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 26 ms. Found 1 JPA repository interfaces.
+2023-11-21T10:43:30.141+09:00  INFO 6978 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-11-21T10:43:30.220+09:00  INFO 6978 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2023-11-21T10:43:30.220+09:00  INFO 6978 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-11-21T10:43:30.274+09:00  INFO 6978 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-21T10:43:30.298+09:00  INFO 6978 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.13.Final
+2023-11-21T10:43:30.299+09:00  INFO 6978 --- [    Test worker] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-11-21T10:43:30.432+09:00  INFO 6978 --- [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-21T10:43:30.815+09:00  INFO 6978 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2023-11-21T10:43:30.817+09:00  INFO 6978 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-21T10:43:30.909+09:00  WARN 6978 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-21T10:43:31.120+09:00  INFO 6978 --- [    Test worker] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2'. Database available at 'jdbc:h2:mem:testdb'
+2023-11-21T10:43:31.144+09:00  INFO 6978 --- [    Test worker] c.e.a.entity.ScoreRepositoryTest         : Started ScoreRepositoryTest in 1.561 seconds (process running for 2.109)
+Hibernate: select s1_0.score_id,s1_0.student_id,s1_0.subject_id,s1_0.point,s1_0.student_name,s1_0.subject_name from score s1_0 where s1_0.student_id=?
+score = com.example.abstractquerydsl.entity.Score@6eac71db
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
